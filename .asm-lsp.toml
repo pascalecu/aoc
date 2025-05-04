@@ -1,0 +1,21 @@
+[default_config]
+version = "0.10.0"
+assembler = "gas"
+instruction_set = "arm64"
+
+[default_config.opts]
+compiler = "aarch64-linux-gnu-gcc"
+compile_flags_txt = [
+    "-g",
+    "-x",
+    "assembler-with-cpp",
+    "-Wall",
+    "-Wextra",
+    "-pedantic",
+    "-pedantic-errors",
+    "-std=c23",
+    "-march=armv8-a",
+    "-nostartfiles"
+]
+diagnostics = true
+default_diagnostics = true
