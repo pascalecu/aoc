@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ $# -ne 2 ]]; then
+    echo "Usage: $0 <make_target> <year/day>"
+    echo "Example: $0 run 2025/01"
+    exit 1
+fi
+
+CMD="$1"
+ID="$2"
+
+if [[ ! "$ID" =~ ^[0-9]{4}/[0-9]{2}$ ]]; then
+    echo "Invalid format: expected YEAR/DD, got '$ID'"
+    exit 1
+fi
+
+YEAR="${ID%%/*}"
+DAY="${ID##*/}"
+
+make "$CMD" YEAR="$YEAR" DAY="$DAY"
