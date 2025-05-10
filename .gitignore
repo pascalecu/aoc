@@ -1,9 +1,10 @@
 input/
 build/
 
-asm/*
-!asm/**/*.S
-!asm/
+*.o
+*.s
+asm/*/day*
+!asm/*/day*.S
 
 # Created by https://www.toptal.com/developers/gitignore/api/emacs
 # Edit at https://www.toptal.com/developers/gitignore?templates=emacs
